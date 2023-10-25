@@ -4,7 +4,7 @@ import { prisma } from "../../../../prisma";
 
 
 class UserRepository implements IUser {
-    async create({ imageUrl, name, typeUser, }: DataUser): Promise<User> {
+    async create({ name, imageUrl, typeUser, }: DataUser): Promise<User> {
         const createUser = await prisma.user.create({
             data: {
                 imageUrl, name, typeUser

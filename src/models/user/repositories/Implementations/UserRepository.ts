@@ -36,3 +36,4 @@ class UserRepository implements IUser {
         return update
     }
 }
+export { UserRepository }

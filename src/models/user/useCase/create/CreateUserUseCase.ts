@@ -3,12 +3,14 @@ import { UserRepository } from "../../repositories/Implementations/UserRepositor
 import { ContactTypeRepository } from "../../../contactType/useCase/createTypeContact";
 import { ContactRepository } from "../../../contact/repositories/implementations/ContactRepository";
 import { AppError } from "../../../../errors/AppError";
+import { LoginRepository } from "../../../../Login/repositories/implementations/LoginRepository";
 
 
 interface UserData {
     name: string
     imageUrl: string
     typeUser: TypeUser
+    password: string
 }
 interface UserContact {
     content: string,
@@ -21,12 +23,13 @@ interface UserDataAll {
 }
 class CreateUserUseCase {
     async execute({
-        userData: { name, imageUrl, typeUser },
+        userData: { name, imageUrl, typeUser, password },
         userContact
     }: UserDataAll): Promise<User> {
         const userReposiroty = new UserRepository()
         const contactTypeRepository = new ContactTypeRepository()
         const contactRepository = new ContactRepository()
+        const loginRepositories = new LoginRepository()
 
         await Promise.all(
             userContact.map(async (item) => {
@@ -64,6 +67,11 @@ class CreateUserUseCase {
             })
         );
 
+        await loginRepositories.create({
+            userId: result.name,
+            passwordHash: password,
+            email: userContact[0].content
+        })
         return result
     }
 }

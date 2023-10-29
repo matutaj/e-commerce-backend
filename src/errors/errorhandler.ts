@@ -14,6 +14,7 @@ function AppErrorHandler(
     });
   }
 
+
   return response.status(500).json({
     status: "error",
     message: `Error - ${err.message}`,

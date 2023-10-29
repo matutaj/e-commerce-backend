@@ -23,13 +23,13 @@ class ContactRepository implements IContact {
 
   async getByContent(content: string): Promise<Contact | undefined> {
     const contact =
-      (await prisma.contact.findUnique({ where: { content } })) || undefined;
+      await prisma.contact.findUnique({ where: { content } }) || undefined;
     return contact;
   }
 
   async getUserId(userId: string): Promise<Contact[] | undefined> {
     const contact =
-      (await prisma.contact.findMany({ where: { userId } })) || undefined;
+      await prisma.contact.findMany({ where: { userId } }) || undefined;
     return contact;
   }
 

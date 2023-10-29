@@ -10,18 +10,16 @@ class UserRepository implements IUser {
                 imageUrl, name, typeUser
             }
         })
-
         return createUser
-
     }
     async getAll(): Promise<User[]> {
-        const getAllUser = await prisma.user.findMany()
+        const getAllUser = await prisma.user.findMany({ include: { Contact: true, Buy: true } })
 
         return getAllUser;
     }
 
     async getById(id: string): Promise<User | undefined> {
-        const getUserById = await prisma.user.findFirst({ where: { id } }) || undefined;
+        const getUserById = await prisma.user.findFirst({ where: { id }, include: { Contact: true, Buy: true } }) || undefined;
 
         return getUserById;
     }

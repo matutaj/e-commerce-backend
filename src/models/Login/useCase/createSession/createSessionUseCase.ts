@@ -1,10 +1,10 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import { authConfig } from "../../../../src/config/auth";
-import { UserRepository } from "../../../models/user/repositories/Implementations/UserRepository";
+import { authConfig } from "../../../../config/auth";
+import { UserRepository } from "../../../user/repositories/Implementations/UserRepository";
 import { SessionData, SessionReturn } from "../../repositories/ILogin";
 import { LoginRepository } from "../../repositories/implementations/LoginRepository";
-import { AppError } from "../../../errors/AppError";
+import { AppError } from "../../../../errors/AppError";
 
 class CreateSessionUseCase {
   async execute({

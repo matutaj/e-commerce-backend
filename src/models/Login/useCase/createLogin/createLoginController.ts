@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { AppError } from "../../../../src/errors/AppError";
-import { loginSchema } from "../../../../src/schemas/login";
+import { AppError } from "../../../../errors/AppError";
+import { loginSchema } from "../../../../schemas/login";
 import { CreateLoginUseCase } from "./createLoginUseCase";
 
 class CreateLoginController {

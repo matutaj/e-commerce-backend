@@ -3,7 +3,7 @@ import { UserRepository } from "../../repositories/Implementations/UserRepositor
 import { ContactTypeRepository } from "../../../contactType/useCase/createTypeContact";
 import { ContactRepository } from "../../../contact/repositories/implementations/ContactRepository";
 import { AppError } from "../../../../errors/AppError";
-import { LoginRepository } from "../../../../Login/repositories/implementations/LoginRepository";
+import { LoginRepository } from "../../../Login/repositories/implementations/LoginRepository";
 
 
 interface UserData {

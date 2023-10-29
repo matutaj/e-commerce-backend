@@ -1,7 +1,7 @@
 import { Login } from "@prisma/client";
 import bcrypt from "bcryptjs";
-import { AppError } from "../../../../src/errors/AppError";
-import { UserRepository } from "../../..//models/user/repositories/Implementations/UserRepository";
+import { AppError } from "../../../../errors/AppError";
+import { UserRepository } from "../../../user/repositories/Implementations/UserRepository";
 import { LoginData } from "../../repositories/ILogin";
 import { LoginRepository } from "../../repositories/implementations/LoginRepository";
 

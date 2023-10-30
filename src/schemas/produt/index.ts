@@ -8,4 +8,7 @@ const createProdutSchema = Yup.object().shape({
     imageUrl: Yup.string()
 })
 
-export { createProdutSchema }
+const getByNameSchema = Yup.object().shape({
+    name: Yup.string().required()
+})
+export { createProdutSchema, getByNameSchema }

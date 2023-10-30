@@ -1,8 +1,8 @@
 import { Produt } from "@prisma/client"
 
 
-interface IProdutData {
-    Id?: string
+export interface IProdutData {
+    id?: string
     name: string
     imageUrl?: string
     categoryId: string
@@ -10,7 +10,7 @@ interface IProdutData {
     cost: number
 }
 
-interface IProdut {
+export interface IProdut {
     create({ }: IProdutData): Promise<Produt>
     getById(id: string): Promise<Produt | undefined>
     getAll(): Promise<Produt[]>

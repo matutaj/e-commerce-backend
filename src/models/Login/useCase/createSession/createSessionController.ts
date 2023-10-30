@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { sessionSchema } from "../../../../src/schemas/login";
+import { sessionSchema } from "../../../../schemas/login";
 import { CreateSessionUseCase } from "./createSessionUseCase";
-import { AppError } from "../../../errors/AppError";
+import { AppError } from "../../../../errors/AppError";
 
 class CreateSessionController {
   async handle(req: Request, res: Response) {

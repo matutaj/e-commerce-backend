@@ -1,6 +1,6 @@
 import { Login } from "@prisma/client";
 import { ILogin, LoginData } from "../ILogin";
-import { prisma } from "../../../prisma";
+import { prisma } from "../../../../prisma";
 
 class LoginRepository implements ILogin {
   async create({

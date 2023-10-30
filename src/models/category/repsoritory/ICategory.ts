@@ -1,6 +1,6 @@
 import { Category } from "@prisma/client"
 
-interface ICategoryData {
+export interface ICategoryData {
     id?: string
     name: string
 }

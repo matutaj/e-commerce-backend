@@ -48,3 +48,5 @@ class ProdutRepository implements IProdut {
 
     }
 }
+
+export { ProdutRepository }

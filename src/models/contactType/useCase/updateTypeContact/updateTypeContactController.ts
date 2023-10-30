@@ -2,7 +2,6 @@ import { Request, Response } from "express";
 import { UpdateTypeContactUseCase } from "./updateTypeContactUseCase";
 import { updateTypeContactSchema } from "../../../../schemas/typeContact";
 import { AppError } from "../../../../errors/AppError";
-import { ContactTypeRepository } from "../../repositories/Implementations/ContactTypeRepository";
 
 class UpdateTypeContactController {
   async handle(req: Request, res: Response) {

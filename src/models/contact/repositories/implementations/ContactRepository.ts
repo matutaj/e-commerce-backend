@@ -17,19 +17,19 @@ class ContactRepository implements IContact {
 
   async getById(id: string): Promise<Contact | undefined> {
     const contact =
-      (await prisma.contact.findUnique({ where: { id } })) || undefined;
+      (await prisma.contact.findUnique({ where: { id }, include: { ContactType: true } })) || undefined;
     return contact;
   }
 
   async getByContent(content: string): Promise<Contact | undefined> {
     const contact =
-      await prisma.contact.findUnique({ where: { content } }) || undefined;
+      await prisma.contact.findUnique({ where: { content }, include: { ContactType: true } }) || undefined;
     return contact;
   }
 
   async getUserId(userId: string): Promise<Contact[] | undefined> {
     const contact =
-      await prisma.contact.findMany({ where: { userId } }) || undefined;
+      await prisma.contact.findMany({ where: { userId }, include: { ContactType: true } }) || undefined;
     return contact;
   }
 

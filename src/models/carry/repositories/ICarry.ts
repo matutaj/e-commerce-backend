@@ -9,7 +9,7 @@ export interface DataCarry {
 
 export interface ICarry {
     create({ }: DataCarry): Promise<Carry>
-    getAll(): Promise<Carry[]>
+    getAll(id: string): Promise<Carry[]>
     getById(id: string): Promise<Carry | undefined>
     getByName(name: string): Promise<Produt | undefined>
     delete(id: string): Promise<void>

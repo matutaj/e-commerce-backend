@@ -11,8 +11,8 @@ class CarryRepository implements ICarry {
         return createCArry;
     }
 
-    async getAll(): Promise<Carry[]> {
-        const getAllCarry = await prisma.carry.findMany({ include: { user: true, produt: true } })
+    async getAll(id: string): Promise<Carry[]> {
+        const getAllCarry = await prisma.carry.findMany({ where: { userId: id }, include: { user: true, produt: true } })
 
         return getAllCarry;
     }

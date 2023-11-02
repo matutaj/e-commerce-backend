@@ -6,4 +6,8 @@ const createCarrySchema = Yup.object().shape({
     userId: Yup.string().required()
 })
 
-export { createCarrySchema }
+const getAllCarryForUserId = Yup.object().shape({
+    userId: Yup.string().required()
+})
+
+export { createCarrySchema, getAllCarryForUserId }

@@ -15,25 +15,25 @@ class ProdutRepository implements IProdut {
     }
 
     async getById(id: string): Promise<Produt | undefined> {
-        const getById = await prisma.produt.findUnique({ where: { id }, include: { Carry: true } }) || undefined
+        const getById = await prisma.produt.findUnique({ where: { id }, include: { Carry: true, category: true } }) || undefined
 
         return getById
     }
 
     async getByName(name: string): Promise<Produt | undefined> {
-        const getByName = await prisma.produt.findFirst({ where: { name }, include: { Carry: true } }) || undefined;
+        const getByName = await prisma.produt.findFirst({ where: { name }, include: { Carry: true, category: true } }) || undefined;
 
         return getByName;
     }
 
     async getAll(): Promise<Produt[]> {
-        const getAll = await prisma.produt.findMany({ include: { Carry: true } })
+        const getAll = await prisma.produt.findMany({ include: { Carry: true, category: true } })
         return getAll;
     }
 
     async getProdutByCategoryId(id: string): Promise<Produt | undefined> {
 
-        const getProdutToCategoryId = await prisma.produt.findFirst({ where: { categoryId: id }, include: { Carry: true } }) || undefined
+        const getProdutToCategoryId = await prisma.produt.findFirst({ where: { categoryId: id }, include: { Carry: true, category: true } }) || undefined
         return getProdutToCategoryId
     }
 

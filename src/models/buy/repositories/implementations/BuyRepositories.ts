@@ -16,12 +16,12 @@ class BuyRepository implements IBuy {
     }
 
     async getAllBuy(): Promise<Buy[]> {
-        const getAllBuy = await prisma.buy.findMany()
+        const getAllBuy = await prisma.buy.findMany({ include: { user: true, produt: true } })
         return getAllBuy;
     }
 
     async getByUserId(id: string): Promise<Buy[]> {
-        const getByUserId = await prisma.buy.findMany({ where: { userId: id } })
+        const getByUserId = await prisma.buy.findMany({ where: { userId: id }, include: { user: true, produt: true } })
 
         return getByUserId
     }

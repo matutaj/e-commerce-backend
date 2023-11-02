@@ -6,8 +6,9 @@ import { ProdutRepository } from "../../../produt/repositories/implementations/P
 import { AppError } from "../../../../errors/AppError";
 
 
+
 class CreateBuyUseCase {
-    async execute({ cellfoneNumber, deliveryDate, localdelivery, produtId, totalPrice, userId }: DataBuy): Promise<Buy> {
+    async execute({ cellfoneNumber, deliveryDate, localdelivery, produtId, quant, totalPrice, userId }: DataBuy): Promise<Buy> {
         const buyRepository = new BuyRepository()
         const userRepository = new UserRepository()
         const produtRepository = new ProdutRepository()
@@ -18,7 +19,10 @@ class CreateBuyUseCase {
         const produtIdExiste = await produtRepository.getById(produtId)
         if (!produtIdExiste) throw new AppError("Already Id Produt No Exist!", 400)
 
-        const result = await buyRepository.create({ cellfoneNumber, deliveryDate, localdelivery, produtId, totalPrice, userId })
+        const value: any = produtIdExiste.cost;
+        const price = value * quant
+
+        const result = await buyRepository.create({ cellfoneNumber, deliveryDate, localdelivery, quant, produtId, totalPrice: price, userId })
 
         return result
 

@@ -8,6 +8,7 @@ export interface DataBuy {
     cellfoneNumber: number
     totalPrice: number
     userId: string
+    quant: number
     produtId: string
 }
 

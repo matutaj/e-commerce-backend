@@ -5,10 +5,10 @@ import { prisma } from "../../../../prisma";
 
 
 class BuyRepository implements IBuy {
-    async create({ cellfoneNumber, deliveryDate, localdelivery, produtId, totalPrice, userId }: DataBuy): Promise<Buy> {
+    async create({ cellfoneNumber, deliveryDate, localdelivery, produtId, totalPrice, userId, quant }: DataBuy): Promise<Buy> {
         const create = await prisma.buy.create({
             data: {
-                cellfoneNumber, deliveryDate, localdelivery, produtId, totalPrice, userId
+                cellfoneNumber, deliveryDate, localdelivery, produtId, totalPrice, userId, quant
             }
         })
 

@@ -103,6 +103,7 @@ model Buy {
   localdelivery  String
   cellfoneNumber Decimal
   totalPrice     Decimal
+  quant          Decimal
   userId         String
   produtId       String
   createdAt      DateTime @default(now())

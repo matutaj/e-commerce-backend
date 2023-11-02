@@ -18,7 +18,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
     res.header("Access-Control-Allow-Headers", "Content-Type,Authorization")
     app.use(cors(
         {
-            origin: "http://localhost:3000",
+
             methods: ["GET", "POST", "PUT", "DELETE"],
             credentials: true
         }

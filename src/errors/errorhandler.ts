@@ -14,6 +14,7 @@ function AppErrorHandler(
         });
     }
 
+    console.log(err)
 
     return response.status(500).json({
         status: "error",

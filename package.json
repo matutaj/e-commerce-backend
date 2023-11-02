@@ -5,12 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "prisma generate && <actual-build-command>",
+    "build": "prisma generate babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
     "dev": "ts-node-dev --exit-child --transpile-only --ignore-watch node_modules src/server.ts",
     "start": "ts-node src/server.ts",
     "migrate:dev": "prisma migrate dev",
-    "migrate:deploy": "prisma migrate deploy",
-    "vercel-build": "npx prisma migrate deploy"
+    "migrate:deploy": "prisma migrate deploy"
   },
   "keywords": [],
   "author": "",
@@ -35,7 +34,6 @@
     "express-async-errors": "^3.1.1",
     "jsonwebtoken": "^9.0.2",
     "swagger-ui-express": "^5.0.0",
-    "ts-node-dev": "^2.0.0",
-    "vercel": "^32.5.0"
+    "ts-node-dev": "^2.0.0"
   }
 }

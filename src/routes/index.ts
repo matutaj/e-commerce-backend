@@ -6,6 +6,7 @@ import { userRoutes } from "./user.routes";
 import { loginRoutes } from "./login.routes";
 import { produtroutes } from "./produt.routes";
 import { categoryRoutes } from "./category.routes";
+import { carryRoutes } from "./carry.routes";
 
 
 const routes = Router();
@@ -16,6 +17,7 @@ routes.use("/contactType", typeContactRoutes)
 routes.use("/user", userRoutes)
 routes.use("/login", loginRoutes)
 routes.use("/category", categoryRoutes)
+routes.use("/carry", carryRoutes)
 routes.use("/produt", produtroutes)
 
 export { routes }

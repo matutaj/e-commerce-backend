@@ -20,6 +20,7 @@ routes.use("/login", loginRoutes)
 routes.use("/category", categoryRoutes)
 routes.use("/carry", carryRoutes)
 routes.use("/produt", produtroutes)
-routes.use("/buy", buyRoutes)
+routes.use("/buy", buyRoutes
+)
 
 export { routes }

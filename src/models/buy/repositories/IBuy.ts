@@ -3,7 +3,7 @@ import { Buy } from "@prisma/client"
 
 export interface DataBuy {
     id?: string
-    deliverDate: number
+    deliveryDate: Date
     localdelivery: string
     cellfoneNumber: number
     totalPrice: number

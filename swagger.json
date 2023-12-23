@@ -14,8 +14,49 @@
       "descroption": "API de Test"
     },
     {
-      "url": "http://localhost:3333/",
+      "url": "https://e-commerce-backend-matutaj.vercel.app/",
       "descroption": "API de Produção"
     }
-  ]
+  ],
+  "paths": {
+    "/category": {
+      "post": {
+        "summary": "Cadastro de Categoria",
+        "descroption": " Essa rota será responsável por cadastrar uma categória",
+        "tags": ["Categories"],
+        "requestBody": {
+          "content": {
+            "appplication/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Category"
+              },
+              "examples": {
+                "category": {
+                  "value": {
+                    "name": "Tech"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Listar Todas Categorias",
+        "descroption": " Essa rota será responsável por Listar todas categória"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Category": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
 }

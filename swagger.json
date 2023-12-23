@@ -1,0 +1,11 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API de Ecommerce",
+    "descroption": "Essa API tem como objetivo cadastrar produto e fazer a compra por usuário ",
+    "contact": {
+      "email": "matutaj2080@gmail.com"
+    },
+    "version": "1.0.0"
+  }
+}

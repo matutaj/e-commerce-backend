@@ -7,5 +7,15 @@
       "email": "matutaj2080@gmail.com"
     },
     "version": "1.0.0"
-  }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3333/",
+      "descroption": "API de Test"
+    },
+    {
+      "url": "http://localhost:3333/",
+      "descroption": "API de Produção"
+    }
+  ]
 }

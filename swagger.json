@@ -75,6 +75,26 @@
             "type": "string"
           }
         }
+      },
+      "Product": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "categoryId": {
+            "type": "string"
+          },
+          "cost": {
+            "type": "Number"
+          },
+          "quant": {
+            "type": "Number"
+          },
+          "imageUrl": {
+            "type": "string"
+          }
+        }
       }
     }
   }

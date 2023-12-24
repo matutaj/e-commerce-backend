@@ -62,7 +62,128 @@
       },
       "get": {
         "summary": "Listar Todas Categorias",
-        "descroption": " Essa rota será responsável por Listar todas categória"
+        "descroption": " Essa rota será responsável por Listar todas categória",
+        "tags": ["Categories"],
+
+        "responses": {
+          "500": {
+            "descroption": "Error of Server"
+          },
+
+          "200": {
+            "description": "Sucessfull",
+            "content": {
+              "appplication/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Category"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/product": {
+      "post": {
+        "summary": "Cadastro de Produto",
+        "descroption": "Essa Rota será responsável por cadastrar Produtos",
+        "tags": ["Product"],
+        "requestBody": {
+          "content": {
+            "appplication/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Product"
+              },
+              "examples": {
+                "product": {
+                  "value": {
+                    "name": "Computador",
+                    "categoryId": "4c0d7050-36db-442b-8787-06cf0f798e59",
+                    "cost": 20000.0,
+                    "quant": 1,
+                    "imageUrl": "WhatsApp Image 2023-09-16 at 07.57.54.jpeg"
+                  }
+                }
+              },
+              "responses": {
+                "500": {
+                  "descroption": "Error of Server"
+                },
+                "400": {
+                  "descroption": "Already Name Exist or Field Valodation Error"
+                },
+                "200": {
+                  "description": "Sucessfull",
+                  "content": {
+                    "appplication/json": {
+                      "schema": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/Product"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Lsstar Todos os Produtos",
+        "descroption": "Essa Rota será responsável por listar todos os produtos",
+        "tags": ["Product"],
+
+        "responses": {
+          "500": {
+            "descroption": "Error of Server"
+          },
+
+          "200": {
+            "description": "Sucessfull",
+            "content": {
+              "appplication/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Category"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/product/name": {
+      "get": {
+        "summary": "Lsstar Todos os Produtos",
+        "descroption": "Essa Rota será responsável por listar todos os produtos",
+        "tags": ["Product"],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Nome do produto para busca",
+            "requered": true
+          }
+        ],
+
+        "responses": {
+          "500": {
+            "descroption": "Error of Server"
+          },
+
+          "200": {
+            "description": "Sucessfull",
+            "content": {
+              "appplication/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Category"
+                }
+              }
+            }
+          }
+        }
       }
     }
   },

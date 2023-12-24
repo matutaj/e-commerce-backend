@@ -36,6 +36,25 @@
                     "name": "Tech"
                   }
                 }
+              },
+              "responses": {
+                "500": {
+                  "descroption": "Error of Server"
+                },
+                "400": {
+                  "descroption": "Already Name Exist or Field Valodation Error"
+                },
+                "200": {
+                  "description": "Sucessfull",
+                  "content": {
+                    "appplication/json": {
+                      "schema": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/Category"
+                      }
+                    }
+                  }
+                }
               }
             }
           }

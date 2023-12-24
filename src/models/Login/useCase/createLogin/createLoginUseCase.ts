@@ -6,11 +6,7 @@ import { LoginData } from "../../repositories/ILogin";
 import { LoginRepository } from "../../repositories/implementations/LoginRepository";
 
 class CreateLoginUseCase {
-  async execute({
-    email,
-    passwordHash,
-    userId,
-  }: LoginData): Promise<Login> {
+  async execute({ email, passwordHash, userId }: LoginData): Promise<Login> {
     const loginRepository = new LoginRepository();
     const userRepository = new UserRepository();
 
@@ -38,7 +34,6 @@ class CreateLoginUseCase {
       if (userLoginAlreadyExists)
         throw new AppError("This User Already Have a Session Data!", 400);
     }
-
 
     const password = await bcrypt.hash(passwordHash, 8);
 

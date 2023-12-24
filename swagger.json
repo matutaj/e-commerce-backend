@@ -303,6 +303,50 @@
             "type": "string"
           }
         }
+      },
+
+      "User": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "imageUrl": {
+            "type": "string"
+          },
+          "typeUser": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "userContact": {
+            "type": "object",
+            "properties": {
+              "content": {
+                "type": "string"
+              },
+              "contactTypeId": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "ContactType": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "login": {
+        "type": "object",
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
       }
     }
   }

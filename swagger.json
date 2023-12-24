@@ -185,6 +185,82 @@
           }
         }
       }
+    },
+    "/carry": {
+      "post": {
+        "summary": "Carry do Produto",
+        "descroption": "Essa Rota será responsável por cadastrar Produtos no carrinho",
+        "tags": ["Carry"],
+        "requestBody": {
+          "content": {
+            "appplication/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Category"
+              },
+              "examples": {
+                "product": {
+                  "value": {
+                    "produtId": "4c0d7050-36db-442b-8787-06cf0f798e59",
+                    "userId": "4c0d7050-36db-442b-8787-06cf0f798e59"
+                  }
+                }
+              },
+              "responses": {
+                "500": {
+                  "descroption": "Error of Server"
+                },
+                "400": {
+                  "descroption": "Already Id Produt No Exist or Already Id User No Exist"
+                },
+                "200": {
+                  "description": "Sucessfull",
+                  "content": {
+                    "appplication/json": {
+                      "schema": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/Carry"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/carry/userId": {
+      "get": {
+        "summary": "Lsstar Todas compras pelo UserId",
+        "descroption": "Essa Rota será responsável por listar todos os produtos da compra pelo usuário",
+        "tags": ["Carry"],
+        "parameters": [
+          {
+            "UserId": "4c0d7050-36db-442b-8787-06cf0f798e59",
+            "in": "query",
+            "description": "Id do usuário para busca",
+            "requered": true
+          }
+        ],
+
+        "responses": {
+          "500": {
+            "descroption": "Error of Server"
+          },
+
+          "200": {
+            "description": "Sucessfull",
+            "content": {
+              "appplication/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Product"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -213,6 +289,17 @@
             "type": "Number"
           },
           "imageUrl": {
+            "type": "string"
+          }
+        }
+      },
+      "Carry": {
+        "type": "object",
+        "properties": {
+          "produtId": {
+            "type": "string"
+          },
+          "userId": {
             "type": "string"
           }
         }
